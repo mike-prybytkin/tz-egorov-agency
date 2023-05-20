@@ -1,0 +1,15 @@
+.button {
+  @extend %transition;
+  @include font-primary($color: $color-light, $size: 1.8rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.button_oval {
+  @extend %button-oval;
+}

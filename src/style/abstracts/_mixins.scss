@@ -1,0 +1,39 @@
+@mixin font-primary ($size: 1.6rem, $weight: 400, $color: $color-text-primary) {
+  font-family: 'Poppins', 'Verdana', 'Geneva', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-additionary ($size: 1.4rem, $weight: 400, $color: $color-text-primary) {
+  font-family: 'Roboto', 'Arial Narrow', 'Arial', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin flex ($justify: center, $align: center, $flow: row wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-flow: $flow;
+}
+
+@mixin background-stripes ($deg: 90deg, $color1-start: 0px, $color1-finish: 120px, $color2-start: 120px, $color2-finish: 145px ) {
+  background: repeating-linear-gradient(
+    $deg,
+    $color-background-stripes $color1-start,
+    $color-background-stripes $color1-finish,
+    $color-light $color2-start,
+    $color-light $color2-finish
+    );
+}
+
+@mixin columns ($width) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  >* {
+    flex-basis: $width;
+  }
+}

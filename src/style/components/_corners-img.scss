@@ -1,0 +1,13 @@
+.corners-img {
+  @include flex($justify: space-between, $flow: row nowrap);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  mix-blend-mode: multiply;
+  z-index: 1;
+
+  .corners-img__left,
+  .corners-img__right  {
+    height: 400px;
+  }
+}

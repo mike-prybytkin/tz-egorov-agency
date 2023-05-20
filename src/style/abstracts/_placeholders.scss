@@ -1,0 +1,23 @@
+%transition {
+  transition: all .3s ease-in-out;
+}
+
+%background-stripes {
+  background: repeating-linear-gradient(
+    to right,
+    $color-background-stripes 0px,
+    $color-background-stripes 120px,
+    $color-light 120px,
+    $color-light 145px
+    );
+}
+
+%button-oval {
+  @include flex($justify: space-around, $align: center);
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  padding: 12px 28px;
+  background: $color-bg-button-event;
+  color: $color-light;
+}
