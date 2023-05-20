@@ -1,11 +1,23 @@
 .form {
+  position: relative;
   @include flex($justify: space-between, $flow: row nowrap);
   width: 440px;
   height: 60px;
   background: transparent;
   border-radius: 30px;
+  @extend %transition;
+
+  &.error {
+    box-shadow: 0 0 20px $color-error inset;
+
+    .form__error-message {
+      opacity: 1;
+      top: -70px;
+    }
+  }
   
   .form__input {
+    font-size: 1.8rem;
     background: transparent;
     width: 100%;
     border: none;
@@ -20,5 +32,17 @@
       background: $color-form-button;
       margin-right: 10px;
     }
+  }
+
+  .form__error-message {
+    @extend %transition;
+    opacity: 0;
+    position: absolute;
+    width: 400px;
+    top: 0px;
+    left: calc(50% - (400px / 2));
+    text-align: center;
+    color: $color-light;
+    z-index: -1;
   }
 }
