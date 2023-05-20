@@ -1,0 +1,22 @@
+.countdown {
+  padding-top: 20px;
+  @include flex($align: flex-start);
+  @include font-primary($size: 7.2rem, $weight: 600);
+  gap: 20px;
+  line-height: 7rem;
+
+  .countdown__section {
+    @include flex($flow: column nowrap);
+  }
+}
+
+.countdown-caption {
+  position: relative;
+
+  .countdown-caption__text {
+    position: absolute;
+    @include font-primary($color: $color-light);
+    width: 60px;
+    left: calc(50% - (60px / 2));
+  }
+}

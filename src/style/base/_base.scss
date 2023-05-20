@@ -1,0 +1,36 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: overlay;
+  @include font-primary();
+  background-color: $color-background-body;
+  position: relative;
+  height: 100vh;
+  @include flex($justify: flex-start, $align: inherit, $flow: column nowrap);
+}
+
+h1 {
+  @include font-primary(7.2rem, 700, $color-heading);
+  display: inline-block;
+  margin: 0;
+}
+
+h2 {
+  @include font-primary(7.2rem, 600, $color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+  &:focus {
+    outline: none;
+  }
+}
+
+li {
+  list-style-type: none;
+}

@@ -1,0 +1,11 @@
+.go-to-event {
+  @include flex($flow: column nowrap);
+  .go-to-event__comment {
+    color: $color-text-additionary;
+    font-size: 1.8rem;
+  }
+
+  .go-to-event__button {
+    mix-blend-mode: multiply;
+  }
+}
