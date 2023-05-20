@@ -7,6 +7,11 @@
 
   .countdown__section {
     @include flex($flow: column nowrap);
+
+    .countdown__number {
+      text-align: left;
+      width: 90px;
+    }
   }
 }
 
