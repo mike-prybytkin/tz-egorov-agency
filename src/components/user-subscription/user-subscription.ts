@@ -1,6 +1,7 @@
 import checkEmail from '../service/validator/validator';
 import createSubscriber from '../../api/api';
 import { FORM, FORM_EMAIL, ERROR } from '../../constants/constants';
+import { loaderOn } from '../UI/loader/loader';
 
 const formAddClassError = (input: HTMLInputElement) => {
   input.parentElement?.classList.add(ERROR);
@@ -29,6 +30,7 @@ const userSubscription = () => {
     e.preventDefault();
     const isValid = formValidate(emailInput);
     if (isValid) {
+      loaderOn();
       createSubscriber({ email: emailInput.value });
       form.reset();
     }

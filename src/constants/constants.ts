@@ -16,6 +16,9 @@ const POPUP_MESSAGE = 'popup__message';
 const POPUP_CLOSE_BUTTON_MAIN = '.popup__close-button_main';
 const POPUP_CLOSE_BUTTON_SECONDARY = '.popup__close-button_secondary';
 
+const LOADER = '.loader';
+const LOADER_LOADING = 'loader_loading';
+
 export {
   COUNTDOWN_DAYS,
   COUNTDOWN_HOURS,
@@ -32,4 +35,6 @@ export {
   POPUP_MESSAGE,
   POPUP_CLOSE_BUTTON_MAIN,
   POPUP_CLOSE_BUTTON_SECONDARY,
+  LOADER,
+  LOADER_LOADING,
 };

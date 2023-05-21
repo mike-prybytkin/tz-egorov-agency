@@ -1,9 +1,10 @@
 .footer {
   position: relative;
+  height: 192px;
 
   .footer__bg_stripes {
-    height: 192px;
     max-width: $content-width;
+    height: 100%;
     margin: auto;
     @include background-stripes();
     z-index: 1;

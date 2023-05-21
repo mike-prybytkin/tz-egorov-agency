@@ -1,0 +1,41 @@
+.loader {
+  @extend %transition;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color-main-transparent-loader;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+
+  &_loading {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .loader__spiner {
+    position: absolute;
+    font-size: 5rem;
+    top: calc(50% - (60px / 2));
+    left: calc(50% - (60px / 2));
+    color: $color-light;
+    animation: spin 2s ease-out infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  90% {
+    transform: rotate(360deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}

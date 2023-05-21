@@ -1,5 +1,6 @@
 import { IFetchData, IUserData } from '../shared/types';
 import callPopup from '../components/UI/popup/popup';
+import { loaderOff } from '../components/UI/loader/loader';
 
 async function createSubscriber(userData: IUserData) {
   const URL = 'https://jsonplaceholder.typicode.com/posts';
@@ -13,8 +14,10 @@ async function createSubscriber(userData: IUserData) {
   try {
     const response = await fetch(URL, options);
     const data: IFetchData = await response.json();
+    loaderOff();
     callPopup('success', data);
   } catch (error) {
+    loaderOff();
     callPopup('failed');
     console.error(error);
   }
