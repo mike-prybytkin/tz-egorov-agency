@@ -9,5 +9,14 @@
   .corners-img__left,
   .corners-img__right  {
     height: 400px;
+    @include media-desktop {
+      height: 280px;
+    }
+    @include media-tablet {
+      height: 180px;
+    }
+    @include media-mobile {
+      height: 150px;
+    }
   }
 }

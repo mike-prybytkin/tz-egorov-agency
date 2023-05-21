@@ -5,4 +5,14 @@
   height: 100%;
   margin: auto;
   @include background-stripes();
+
+  @include media-tablet {
+    max-width: $content-width-tablet;
+    @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 40px, $color2-start: 40px, $color2-finish: 60px);
+  }
+
+  @include media-mobile {
+    max-width: $content-width-mobile;
+    @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 65px, $color2-start: 65px, $color2-finish: 85px);
+  }
 }

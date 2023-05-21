@@ -4,6 +4,17 @@
     margin-top: 90px;
     line-height: 6rem;
     text-transform: uppercase;
+    @include media-desktop {
+      font-size: 5.5rem;
+      margin-top: 80px;
+    }
+    @include media-tablet {
+      font-size: 3.6rem;
+      line-height: 3.6rem;
+    }
+    @include media-mobile {
+      margin-top: 50px;
+    }
   }
 
   .promo__slogan {
@@ -11,5 +22,9 @@
     max-width: 420px;
     margin: 16px auto 0;
     color: $color-text-additionary;
+    @include media-tablet {
+      font-size: 1.6rem;
+      max-width: 300px;
+    }
   }
 }

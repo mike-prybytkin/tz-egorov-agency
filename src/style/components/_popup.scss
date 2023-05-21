@@ -46,6 +46,10 @@ $popup-height: 370px;
     margin: auto;
     @include background-stripes();
     mix-blend-mode: multiply;
+    @include media-tablet {
+      max-width: $content-width-tablet;
+      @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 40px, $color2-start: 40px, $color2-finish: 60px);
+    }
   }
 }
 
