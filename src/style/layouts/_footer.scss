@@ -1,14 +1,24 @@
 .footer {
   position: relative;
-  height: 192px;
 
   .footer__bg_stripes {
+    height: 192px;
     max-width: $content-width;
-    height: 100%;
     margin: auto;
     @include background-stripes();
     z-index: 1;
-    
+    @include media-desktop {
+      height: 160px;
+    }
+    @include media-tablet {
+      max-width: $content-width-tablet;
+      @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 40px, $color2-start: 40px, $color2-finish: 60px);
+    }
+    @include media-mobile {
+      max-width: $content-width-mobile;
+      @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 65px, $color2-start: 65px, $color2-finish: 85px);
+    }
+
     .footer__bg_color {
       @include flex();
       top: 0;
@@ -25,6 +35,17 @@
         height: 60px;
         border-radius: 30px;
         @include background-stripes($deg: 0deg);
+        @include media-desktop {
+          width: 400px;
+          height: 50px;
+        }
+        @include media-tablet {
+          width: 360px;
+          height: 40px;
+        }
+        @include media-mobile {
+          width: 280px;
+        }
       }
     }
   }

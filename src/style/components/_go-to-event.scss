@@ -1,8 +1,16 @@
 .go-to-event {
   @include flex($flow: column nowrap);
+  padding-bottom: 50px;
+  @include media-mobile {
+    padding-top: 20px;
+  }
+
   .go-to-event__comment {
     color: $color-text-additionary;
     font-size: 1.8rem;
+    @include media-tablet {
+      font-size: 1.6rem;
+    }
   }
 
   .go-to-event__button {

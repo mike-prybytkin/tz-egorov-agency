@@ -23,7 +23,7 @@ h2 {
 }
 
 h3 {
-  @include font-primary(4rem, 700, $color-text-primary);
+  @include font-primary(3.6rem, 700, $color-text-primary);
   margin: 0;
 }
 

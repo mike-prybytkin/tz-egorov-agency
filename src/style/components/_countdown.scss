@@ -4,6 +4,17 @@
   @include font-primary($size: 7.2rem, $weight: 600);
   gap: 20px;
   line-height: 7rem;
+  @include media-desktop {
+    font-size: 6rem;
+  }
+  @include media-tablet {
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    gap: 6px;
+  }
+  @include media-mobile {
+    gap: 0px;
+  }
 
   .countdown__section {
     @include flex($flow: column nowrap);
@@ -11,6 +22,12 @@
     .countdown__number {
       text-align: left;
       width: 90px;
+      @include media-desktop {
+        width: 70px;
+      }
+      @include media-tablet {
+        width: 45px;
+      }
     }
   }
 }
@@ -18,10 +35,65 @@
 .countdown-caption {
   position: relative;
 
+  .countdown-caption__img {
+    @include media-tablet {
+      width: 64px;
+      height: 40px;
+    }
+  }
+
   .countdown-caption__text {
     position: absolute;
     @include font-primary($color: $color-light);
     width: 60px;
     left: calc(50% - (60px / 2));
+    &_days {
+      &::before {
+        content: 'Days';
+      }
+    }
+    &_hours {
+      &::before {
+        content: 'Hours';
+      }
+    }
+    &_minutes {
+      &::before {
+        content: 'Minutes';
+      }
+    }
+    &_seconds {
+      &::before {
+        content: 'Seconds';
+      }
+    }
+
+    @include media-desktop {
+      bottom: 4px;
+    }
+    @include media-tablet {
+      font-size: 12px;
+      bottom: 8px;
+      &_days {
+        &::before {
+          content: 'DD';
+        }
+      }
+      &_hours {
+        &::before {
+          content: 'HH';
+        }
+      }
+      &_minutes {
+        &::before {
+          content: 'MM';
+        }
+      }
+      &_seconds {
+        &::before {
+          content: 'SS';
+        }
+      }
+    }
   }
 }
