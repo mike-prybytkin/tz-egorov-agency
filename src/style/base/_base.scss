@@ -22,6 +22,11 @@ h2 {
   @include font-primary(7.2rem, 600, $color-text-primary);
 }
 
+h3 {
+  @include font-primary(4rem, 700, $color-text-primary);
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   outline: none;

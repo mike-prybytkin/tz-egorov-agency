@@ -12,7 +12,7 @@
 </head>
 
 <body id="body">
-  
+
   <header class="header">
     <div class="corners-img">
       <img class="corners-img__left" src="./assets/bg/bg-top-left.svg" alt="corner-img">
@@ -75,7 +75,8 @@
       </div>
       <div class="go-to-event">
         <p class="go-to-event__comment">Check our event page when you wait:</p>
-        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/" target="_blank">Go to the
+        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/" target="_blank">Go
+          to the
           event <i class="fa fa-arrow-right"></i></a></button>
       </div>
     </div>
@@ -85,13 +86,32 @@
     <div class="footer__bg_stripes">
       <div class="footer__bg_color">
         <div class="footer-form">
-            <form class="form" action="POST">
-              <input class="form__input form__input_text" type="text" placeholder="Enter your Email and get notified">
-              <button class="form__input form__input_button button"><i class="fa fa-arrow-right"></i></button>
-            </form>
+          <form class="form" action="#">
+            <p class="form__error-message">Oops... Incorrect email. Email should look like example@gmail.com</p>
+            <input class="form__input form__input_text form__email" type="text"
+              placeholder="Enter your Email and get notified">
+            <button class="form__input form__input_button button" type="submit"><i
+                class="fa fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
     </div>
+
+    <div class="popup" id="popup">
+      <div class="popup__body">
+        <div class="popup__bg">
+          <div class="popup__content">
+            <div class="popup__content-container">
+              <h3 class="popup__header">success!</h3>
+              <p class="popup__message">${data.email ? `${successMessage} ${data.email}` : failedMessage}</p>
+            </div>
+          </div>
+          <button class="button button_oval popup__close-button_main">close</button>
+          <button class="button popup__close-button_secondary"><span class="button__text">&times;</span></button>
+        </div>
+      </div>
+    </div>
+
   </footer>
 </body>
 
