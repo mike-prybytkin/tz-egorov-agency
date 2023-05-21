@@ -1,14 +1,15 @@
 import checkEmail from '../service/validator/validator';
 import createSubscriber from '../../api/api';
+import { FORM, FORM_EMAIL, ERROR } from '../../constants/constants';
 
 const formAddClassError = (input: HTMLInputElement) => {
-  input.parentElement?.classList.add('error');
-  input.classList.add('error');
+  input.parentElement?.classList.add(ERROR);
+  input.classList.add(ERROR);
 };
 
 const formRemoveClassError = (input: HTMLInputElement) => {
-  input.parentElement?.classList.remove('error');
-  input.classList.remove('error');
+  input.parentElement?.classList.remove(ERROR);
+  input.classList.remove(ERROR);
 };
 
 const formValidate = (emailField: HTMLInputElement) => {
@@ -21,8 +22,8 @@ const formValidate = (emailField: HTMLInputElement) => {
 };
 
 const userSubscription = () => {
-  const form = document.querySelector('.form') as HTMLFormElement;
-  const emailInput = document.querySelector('.form__email') as HTMLInputElement;
+  const form = document.querySelector(FORM) as HTMLFormElement;
+  const emailInput = document.querySelector(FORM_EMAIL) as HTMLInputElement;
 
   const formSend = (e: Event) => {
     e.preventDefault();

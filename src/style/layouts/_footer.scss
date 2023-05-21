@@ -6,7 +6,7 @@
     max-width: $content-width;
     height: 100%;
     margin: auto;
-    @extend %background-stripes;
+    @include background-stripes();
     z-index: 1;
     
     .footer__bg_color {
