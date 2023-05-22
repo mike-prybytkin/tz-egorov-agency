@@ -12,6 +12,14 @@ const i18Obj = {
     failedMessage: 'Sorry, something went wrong. Try again',
     success: 'success!',
     failed: 'failed...',
+    buttonAccordion: 'More information',
+    accordionHeader: 'All events',
+    tabHeader1: 'Hawaiian party',
+    tabHeader2: 'Mafia party',
+    tabHeader3: 'Party on the beach',
+    tabHeader4: 'Summer party',
+    tabHeader5: 'Home party',
+    tabHeader6: 'Party on the street',
   },
 
   ru: {
@@ -28,6 +36,14 @@ const i18Obj = {
     failedMessage: 'Извините, что-то пошло не так. Попробуйте снова',
     success: 'успешно!',
     failed: 'ошибка...',
+    buttonAccordion: 'Больше информации',
+    accordionHeader: 'Все мероприятия',
+    tabHeader1: 'Гавайская вечеринка',
+    tabHeader2: 'Игра в мафию',
+    tabHeader3: 'Вечеринка на пляже',
+    tabHeader4: 'Летняя вечеринка',
+    tabHeader5: 'Домашняя вечеринка',
+    tabHeader6: 'Уличная вечеринка',
   },
 };
 

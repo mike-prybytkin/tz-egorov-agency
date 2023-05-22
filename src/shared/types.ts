@@ -7,6 +7,12 @@ export interface IFetchData {
   id: number;
 }
 
+export interface HasDataAttribute {
+  dataset: {
+    [key: string]: number;
+  };
+}
+
 export type Translations = {
   en: {
     buttonLang: string;

@@ -1,6 +1,5 @@
 import i18Obj from '../../shared/translate-data';
-import { Translations } from '../../shared/types';
-import { HasDataAttribute } from './types';
+import { Translations, HasDataAttribute } from '../../shared/types';
 import { BODY } from '../../constants/constants';
 
 const textReplacement = (button: HTMLElement) => {

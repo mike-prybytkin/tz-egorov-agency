@@ -13,3 +13,9 @@
 .button_oval {
   @extend %button-oval;
 }
+
+.button_accordion {
+  padding: 5px 10px;
+  border: 1px solid $color-light;
+  border-left: 4px solid $color-light;
+}

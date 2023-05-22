@@ -27,6 +27,11 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  @include font-primary(3.2rem, 600, $color-light);
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   outline: none;
