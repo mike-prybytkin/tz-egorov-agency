@@ -68,6 +68,29 @@
       }
     }
 
+    body.ru-lang & {
+      &_days {
+        &::before {
+          content: 'Дней';
+        }
+      }
+      &_hours {
+        &::before {
+          content: 'Часов';
+        }
+      }
+      &_minutes {
+        &::before {
+          content: 'Минут';
+        }
+      }
+      &_seconds {
+        &::before {
+          content: 'Секунд';
+        }
+      }
+    }
+
     @include media-desktop {
       bottom: 4px;
     }
@@ -92,6 +115,29 @@
       &_seconds {
         &::before {
           content: 'SS';
+        }
+      }
+
+      body.ru-lang & {
+        &_days {
+          &::before {
+            content: 'ДД';
+          }
+        }
+        &_hours {
+          &::before {
+            content: 'ЧЧ';
+          }
+        }
+        &_minutes {
+          &::before {
+            content: 'MM';
+          }
+        }
+        &_seconds {
+          &::before {
+            content: 'CC';
+          }
         }
       }
     }

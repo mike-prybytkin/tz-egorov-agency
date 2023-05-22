@@ -11,9 +11,12 @@
   <title>Lead Advisors</title>
 </head>
 
-<body id="body">
+<body class="body">
 
   <header class="header">
+    <nav class="nav">
+      <button class="button nav__button nav__button_toggle-lang" data-i18="buttonLang">EN</button>
+    </nav>
     <div class="corners-img">
       <img class="corners-img__left" src="./assets/bg/bg-top-left.svg" alt="corner-img">
       <img class="corners-img__right" src="./assets/bg/bg-top-right.svg" alt="corner-img">
@@ -29,8 +32,8 @@
   <main class="main">
     <div class="wrapper">
       <div class="promo">
-        <h1 class="promo__heading heading">Under Construction</h1>
-        <p class="promo__slogan">We're making lots of improvements and will be back soon</p>
+        <h1 class="promo__heading heading" data-i18="promoHeading">Under Construction</h1>
+        <p class="promo__slogan" data-i18="promoSlogan">We're making lots of improvements and will be back soon</p>
       </div>
       <div class="countdown">
         <div class="countdown__section">
@@ -74,10 +77,9 @@
         </div>
       </div>
       <div class="go-to-event">
-        <p class="go-to-event__comment">Check our event page when you wait:</p>
-        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/" target="_blank">Go
-          to the
-          event <i class="fa fa-arrow-right"></i></a></button>
+        <p class="go-to-event__comment" data-i18="goToEventComment">Check our event page when you wait:</p>
+        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/" target="_blank" ><span data-i18="eventButton">Go
+          to the event</span><i class="fa fa-arrow-right"></i></a></button>
       </div>
     </div>
   </main>
@@ -87,7 +89,7 @@
       <div class="footer__bg_color">
         <div class="footer-form">
           <form class="form" action="#">
-            <p class="form__error-message">Oops... Incorrect email. Email should look like example@gmail.com</p>
+            <p class="form__error-message" data-i18="formErrorMessage">Oops... Incorrect email. Email should look like example@gmail.com</p>
             <input class="form__input form__input_text form__email" type="text"
               placeholder="Enter your Email and get notified">
             <button class="form__input form__input_button button" type="submit"><i
@@ -102,11 +104,9 @@
         <div class="popup__bg">
           <div class="popup__content">
             <div class="popup__content-container">
-              <h3 class="popup__header">success!</h3>
-              <p class="popup__message">${data.email ? `${successMessage} ${data.email}` : failedMessage}</p>
             </div>
           </div>
-          <button class="button button_oval popup__close-button_main">close</button>
+          <button class="button button_oval popup__close-button_main" data-i18="close">close</button>
           <button class="button popup__close-button_secondary"><span class="button__text">&times;</span></button>
         </div>
       </div>

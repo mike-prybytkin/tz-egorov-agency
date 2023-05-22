@@ -9,14 +9,30 @@ import {
   POPUP_MESSAGE,
   POPUP_CLOSE_BUTTON_MAIN,
   POPUP_CLOSE_BUTTON_SECONDARY,
+  BODY,
 } from '../../../constants/constants';
+import i18Obj from '../../../shared/translate-data';
+
+const checkLanguage = () => {
+  let currentLanguage = 'en';
+  const body = document.querySelector(BODY) as HTMLElement;
+  if (body.classList.contains('ru-lang')) {
+    currentLanguage = 'ru';
+  } else {
+    currentLanguage = 'en';
+  }
+  return currentLanguage;
+};
 
 const prepareTemplate = (data: IFetchData | null) => {
-  const successMessage = 'You have successfully subscribed to the email newsletter. Hot news is already in your email';
-  const failedMessage = 'Sorry, something went wrong. Try again';
+  const lang = checkLanguage();
+  const headerSuccess = lang === 'en' ? i18Obj.en.success : i18Obj.ru.success;
+  const headerFailed = lang === 'en' ? i18Obj.en.failed : i18Obj.ru.failed;
+  const successMessage = lang === 'en' ? i18Obj.en.successMessage : i18Obj.ru.successMessage;
+  const failedMessage = lang === 'en' ? i18Obj.en.failedMessage : i18Obj.ru.failedMessage;
 
   const template = `
-    <h3 class=${POPUP_HEADER}>${data?.email ? 'success!' : 'failed...'}</h3>
+    <h3 class=${POPUP_HEADER}>${data?.email ? headerSuccess : headerFailed}</h3>
     <p class=${POPUP_MESSAGE}>${data?.email ? `${successMessage} </br><b>${data.email}</b>` : failedMessage}</p>
     `;
   return template;

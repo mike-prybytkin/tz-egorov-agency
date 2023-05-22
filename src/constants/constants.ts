@@ -19,6 +19,8 @@ const POPUP_CLOSE_BUTTON_SECONDARY = '.popup__close-button_secondary';
 const LOADER = '.loader';
 const LOADER_LOADING = 'loader_loading';
 
+const BODY = '.body';
+
 export {
   COUNTDOWN_DAYS,
   COUNTDOWN_HOURS,
@@ -37,4 +39,5 @@ export {
   POPUP_CLOSE_BUTTON_SECONDARY,
   LOADER,
   LOADER_LOADING,
+  BODY,
 };
