@@ -20,6 +20,7 @@ const LOADER = '.loader';
 const LOADER_LOADING = 'loader_loading';
 
 const BODY = '.body';
+const INITIAL_ANIMATION = 'initial-animation';
 
 export {
   COUNTDOWN_DAYS,
@@ -40,4 +41,5 @@ export {
   LOADER,
   LOADER_LOADING,
   BODY,
+  INITIAL_ANIMATION,
 };

@@ -3,6 +3,10 @@
   @include flex();
   padding-top: 60px;
   z-index: 2;
+  opacity: 0;
+  body.initial-animation & {
+    @include fade-in-animation($delay: 0s, $duration: 1s);
+  }
 
   .logo__img {
     width: 60px;

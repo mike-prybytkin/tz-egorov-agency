@@ -5,6 +5,11 @@
   height: 100%;
   margin: auto;
   @include background-stripes();
+  opacity: 0;
+  
+  body.initial-animation & {
+    @include fade-in-animation($delay: 0s);
+  }
 
   @include media-tablet {
     max-width: $content-width-tablet;

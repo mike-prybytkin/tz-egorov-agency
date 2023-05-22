@@ -4,6 +4,11 @@
   @include font-primary($size: 7.2rem, $weight: 600);
   gap: 20px;
   line-height: 7rem;
+  opacity: 0;
+  
+  body.initial-animation & {
+    @include fade-in-animation($delay: 1.5s);
+  }
   @include media-desktop {
     font-size: 6rem;
   }

@@ -1,10 +1,26 @@
 .corners-img {
-  @include flex($justify: space-between, $flow: row nowrap);
   position: absolute;
   width: 100%;
   top: 0;
   mix-blend-mode: multiply;
   z-index: 1;
+  opacity: 0;
+
+  body.initial-animation & {
+    @include fade-in-animation($delay: 0.5s);
+  }
+
+  .corners-img__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .corners-img__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
   .corners-img__left,
   .corners-img__right  {

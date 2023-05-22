@@ -1,6 +1,11 @@
 .go-to-event {
   @include flex($flow: column nowrap);
   padding-bottom: 50px;
+  opacity: 0;
+  
+  body.initial-animation & {
+    @include fade-in-animation($delay: 1.8s);
+  }
   @include media-mobile {
     padding-top: 20px;
   }

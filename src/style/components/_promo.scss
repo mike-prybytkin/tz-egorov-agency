@@ -1,4 +1,9 @@
 .promo {
+  opacity: 0;
+  
+  body.initial-animation & {
+    @include fade-in-animation($delay: 1s);
+  }
 
   .promo__heading {
     margin-top: 90px;

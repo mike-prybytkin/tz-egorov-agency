@@ -3,6 +3,11 @@
   left: 20px;
   top: 20px;
   z-index: 3;
+  opacity: 0;
+
+  body.initial-animation & {
+    @include fade-in-animation($delay: 0.5s);
+  }
 
   .nav__button {
     font-size: 2rem;
