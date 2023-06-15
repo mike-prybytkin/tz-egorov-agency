@@ -1,22 +1,16 @@
 .footer {
   position: relative;
-  height: 192px;
+  background: $color-background-footer;
+  opacity: 0;
 
-  .footer__bg_stripes {
-    max-width: $content-width;
+  body.initial-animation & {
+    @include fade-in-animation($delay: 0.7s);
+  }
+
+  .footer__wrapper {
     height: 192px;
-    margin: auto;
-    @include background-stripes();
     @include media-desktop {
       height: 160px;
-    }
-    @include media-tablet {
-      max-width: $content-width-tablet;
-      @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 40px, $color2-start: 40px, $color2-finish: 60px);
-    }
-    @include media-mobile {
-      max-width: $content-width-mobile;
-      @include background-stripes($deg: 90deg, $color1-start: 0px, $color1-finish: 65px, $color2-start: 65px, $color2-finish: 85px);
     }
 
     .footer__bg_color {
@@ -31,10 +25,6 @@
       z-index: 2;
       
       .footer-form {
-        width: 440px;
-        height: 60px;
-        border-radius: 30px;
-        @include background-stripes($deg: 0deg);
         @include media-desktop {
           width: 400px;
           height: 50px;

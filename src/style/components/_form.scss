@@ -3,8 +3,8 @@
   @include flex($justify: space-between, $flow: row nowrap);
   width: 440px;
   height: 60px;
-  background: transparent;
   border-radius: 30px;
+  background: $color-light;
   @extend %transition;
   @include media-desktop {
     width: 400px;

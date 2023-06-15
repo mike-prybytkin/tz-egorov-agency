@@ -2,6 +2,7 @@
   @include flex($flow: column nowrap);
   padding-bottom: 50px;
   opacity: 0;
+  mix-blend-mode: multiply;
   
   body.initial-animation & {
     @include fade-in-animation($delay: 1.8s);
@@ -19,7 +20,6 @@
   }
 
   .go-to-event__button {
-    mix-blend-mode: multiply;
     gap: 15px;
   }
 }

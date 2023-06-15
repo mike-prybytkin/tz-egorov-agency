@@ -10,6 +10,8 @@ body {
   position: relative;
   height: 100vh;
   @include flex($justify: flex-start, $align: inherit, $flow: column nowrap);
+  max-width: $landing-width;
+  margin: auto;
 }
 
 h1 {
