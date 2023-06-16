@@ -1,48 +1,28 @@
-:root {
-  --color-plus-grey: #a1a3a5;
-  --color-border-grey: #dee2e6;
-  --color-text-dark: #212529;
-  --color-background-white: #fff;
-  --color-border-active-blue: #0dcaf0;
-}
-
 .wrapper-accordion {
-  padding-top: 1000px;
-  position: relative;
-  z-index: -1;
+  height: 900px;
+  width: 100vw;
+  z-index: 0;
+  display: none;
 
-  .wrapper {
-    height: 120vh;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    margin-left: 40px;
+  body.show-other-events & {
+    display: block;
   }
 }
 
 .wrapper-accordion__header {
-  position: absolute;
-  top: 0;
-  width: 1000px;
   text-align: center;
-  left: calc(50% - (1000px / 2));
   text-transform: uppercase;
   color: $color-heading;
+  margin: 40px 0;
 }
+
 
 .wrapper-accordion__rotate {
   @include flex($flow: column nowrap);
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 50%;
+  width: 35%;
   overflow: hidden;
-  top: 50%;
-  left: 50%;
   transform-origin: center center;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(90%, -24%) rotate(-90deg);
   @include media-tablet {
     transform: rotate(0deg);
     padding: 100px 0;
@@ -52,11 +32,10 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-  width: 100%;
+  width: 560px;
 
   &:first-child {
-    border-top: 1px solid var(--color-border-grey);
+    border-top: 1px solid $color-border-accordion;
   }
 }
 
@@ -64,20 +43,16 @@
   position: relative;
   @include flex($justify: flex-start);
   gap: 10px;
-  font-size: 22px;
-  font-weight: bold;
   padding: 10px 20px;
   cursor: pointer;
-  border: 1px solid var(--color-border-grey);
+  border: 1px solid $color-border-accordion;
   border-top: none;
-  color: var(--color-text-dark);
-  background-color: var(--color-background-white);
-  @extend %transition;
   overflow: hidden;
-  z-index: 2;
+  @extend %transition;
 
   &.active {
     background: $color-main;
+    pointer-events: none;
   }
 }
 
@@ -152,7 +127,7 @@
   line-height: 1.3;
   overflow: hidden;
   box-sizing: content-box;
-  border: 1px solid var(--color-border-grey);
+  border: 1px solid $color-border-accordion;
   border-top: none;
   height: 0px;
   opacity: 0;
@@ -162,7 +137,6 @@
   &.active {
     visibility: visible;
     opacity: 1;
-    padding: 20px;
     transition: height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s ease-out, visibility 0.1s ease-out;
   }
 
@@ -197,10 +171,10 @@
 
 .accordion__content-bg {
   position: absolute;
-  width: 100%;
-  height: 650px;
   left: 0;
-  top: -30px;
+  top: 0;
+  width: 100%;
+  height: 560px;
   z-index: -1;
   transform: rotate(90deg);
   @extend %transition;

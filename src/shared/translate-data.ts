@@ -20,6 +20,7 @@ const i18Obj = {
     tabHeader4: 'Summer party',
     tabHeader5: 'Home party',
     tabHeader6: 'Party on the street',
+    otherEventButton: 'Other Events',
   },
 
   ru: {
@@ -44,6 +45,7 @@ const i18Obj = {
     tabHeader4: 'Летняя вечеринка',
     tabHeader5: 'Домашняя вечеринка',
     tabHeader6: 'Уличная вечеринка',
+    otherEventButton: 'Другие События',
   },
 };
 

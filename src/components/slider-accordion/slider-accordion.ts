@@ -23,7 +23,7 @@ const sliderAccordion = () => {
 
         item.classList.add('active');
         activeContent.classList.add('active');
-        activeContent.style.height = `30vw`;
+        activeContent.style.height = `560px`;
       }
     })
   );
@@ -31,7 +31,7 @@ const sliderAccordion = () => {
   document.querySelector('[data-tab="tab-1"]')?.classList.add('active');
   const tab1 = document.querySelector('#tab-1') as HTMLElement;
   tab1.classList.add('active');
-  tab1.style.height = `30vw`;
+  tab1.style.height = `560px`;
 };
 
 export default sliderAccordion;

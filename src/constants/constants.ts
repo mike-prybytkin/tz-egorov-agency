@@ -22,6 +22,10 @@ const LOADER_LOADING = 'loader_loading';
 const BODY = '.body';
 const INITIAL_ANIMATION = 'initial-animation';
 
+const FOOTER_EVENTS_BUTTON = '.footer__events-button';
+const SHOW_OTHER_EVENTS = 'show-other-events';
+const WRAPPER_ACCORDION = '.wrapper-accordion';
+
 export {
   COUNTDOWN_DAYS,
   COUNTDOWN_HOURS,
@@ -42,4 +46,7 @@ export {
   LOADER_LOADING,
   BODY,
   INITIAL_ANIMATION,
+  FOOTER_EVENTS_BUTTON,
+  SHOW_OTHER_EVENTS,
+  WRAPPER_ACCORDION,
 };

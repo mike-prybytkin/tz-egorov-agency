@@ -78,9 +78,12 @@
       </div>
       <div class="go-to-event">
         <p class="go-to-event__comment" data-i18="goToEventComment">Check our event page when you wait:</p>
-        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/"
-          target="_blank"><span data-i18="eventButton">Go
-            to the event</span><i class="fa fa-arrow-right"></i></a></button>
+        <a class="go-to-event__button button button_oval" href="https://afisha.relax.by/event/minsk/" target="_blank">
+          <span data-i18="eventButton">
+            Go to the event
+          </span>
+          <i class="fa fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </main>
@@ -88,15 +91,26 @@
   <footer class="footer">
     <div class="wrapper footer__wrapper">
       <div class="footer__bg_color">
-        <div class="footer-form">
-          <form class="form" action="#">
-            <p class="form__error-message" data-i18="formErrorMessage">Oops... Incorrect email. Email should look like
-              example@gmail.com</p>
-            <input class="form__input form__input_text form__email" type="text"
-              placeholder="Enter your Email and get notified">
-            <button class="form__input form__input_button button" type="submit"><i
-                class="fa fa-arrow-right"></i></button>
-          </form>
+        <div class="footer__column-1"></div>
+        <div class="footer__column-2">
+          <div class="footer-form">
+            <form class="form" action="#">
+              <p class="form__error-message" data-i18="formErrorMessage">Oops... Incorrect email. Email should look like
+                example@gmail.com</p>
+              <input class="form__input form__input_text form__email" type="text"
+                placeholder="Enter your Email and get notified">
+              <button class="form__input form__input_button button" type="submit"><i
+                  class="fa fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__column-3">
+          <button class="footer__events-button button">
+            <span data-i18="otherEventButton">
+              Other Events
+            </span>
+            <i class="fa fa-arrow-up"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -115,8 +129,7 @@
     </div>
   </div>
 
-  <!-- <div class="wrapper-accordion">
-    <div class="wrapper"></div>
+  <div class="wrapper-accordion wrapper">
     <h2 class="wrapper-accordion__header" data-i18="accordionHeader">All events</h2>
     <div class="wrapper-accordion__rotate">
       <div class="accordion">
@@ -238,7 +251,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class="loader">
     <i class="loader__spiner fa fa-spinner"></i>

@@ -2,6 +2,7 @@
   position: relative;
   background: $color-background-footer;
   opacity: 0;
+  z-index: 1;
 
   body.initial-animation & {
     @include fade-in-animation($delay: 0.7s);
@@ -14,10 +15,7 @@
     }
 
     .footer__bg_color {
-      @include flex();
-      top: 0;
-      left: 0;
-      position: absolute;
+      @include flex($justify: space-between);
       width: 100%;
       height: 100%;
       background: $color-background-footer;
@@ -37,6 +35,25 @@
           width: 280px;
         }
       }
+
+    }
+  }
+}
+
+.footer__column-1,
+.footer__column-3 {
+  width: 185px;
+}
+
+.footer__events-button {
+  background: transparent;
+  i {
+    @extend %transition;
+  }
+
+  body.show-other-events & {
+    i {
+      transform: rotate(180deg);
     }
   }
 }
