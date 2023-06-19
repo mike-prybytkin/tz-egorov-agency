@@ -33,9 +33,13 @@
   display: flex;
   flex-direction: column;
   width: 560px;
+  cursor: pointer;
+  background: $color-main;
+  z-index: 0;
+  overflow: hidden;
 
-  &:first-child {
-    border-top: 1px solid $color-border-accordion;
+  &.active {
+    pointer-events: none;
   }
 }
 
@@ -44,77 +48,16 @@
   @include flex($justify: flex-start);
   gap: 10px;
   padding: 10px 20px;
-  cursor: pointer;
   border: 1px solid $color-border-accordion;
   border-top: none;
-  overflow: hidden;
   @extend %transition;
-
-  &.active {
-    background: $color-main;
-    pointer-events: none;
-  }
-}
-
-.accordion__title-bg {
-  position: absolute;
-  width: 100%;
-  height: 650px;
-  z-index: -1;
-  transform: rotate(90deg);
-  @extend %transition;
-  
-  &_img-1 {
-    background: url('../assets/images/img-1.png') no-repeat center center;
-    background-size: cover;
-    .accordion__title_1.active & {
-      background: $color-main;
-    }
-  }
-  &_img-2 {
-    background: url('../assets/images/img-2.jpg') no-repeat center center;
-    background-size: cover;
-    .accordion__title_2.active & {
-      background: $color-main;
-    }
-  }
-  &_img-3 {
-    background: url('../assets/images/img-3.png') no-repeat center center;
-    background-size: cover;
-    .accordion__title_3.active & {
-      background: $color-main;
-    }
-  }
-  &_img-4 {
-    background: url('../assets/images/img-4.jpg') no-repeat center center;
-    background-size: cover;
-    .accordion__title_4.active & {
-      background: $color-main;
-    }
-  }
-  &_img-5 {
-    background: url('../assets/images/img-5.jpg') no-repeat center center;
-    background-size: cover;
-    .accordion__title_5.active & {
-      background: $color-main;
-    }
-  }
-  &_img-6 {
-    background: url('../assets/images/img-6.jpg') no-repeat center center;
-    background-size: cover;
-    .accordion__title_6.active & {
-      background: $color-main;
-    }
-  }
+  z-index: 1;
 }
 
 .tab {
 
   .tab__number {
     color: $color-light;
-    display: block;
-    text-align: center;
-    background-color: transparent;
     font-size: 4rem;
     font-weight: 400;
     transform: rotate(90deg);
@@ -125,18 +68,13 @@
   position: relative;
   font-size: 20px;
   line-height: 1.3;
-  overflow: hidden;
   box-sizing: content-box;
   border: 1px solid $color-border-accordion;
   border-top: none;
   height: 0px;
-  opacity: 0;
-  visibility: hidden;
   transition: height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s ease-out 0.5s, visibility 0.1s ease-out 0.5s;
 
-  &.active {
-    visibility: visible;
-    opacity: 1;
+  .accordion.active & {
     transition: height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s ease-out, visibility 0.1s ease-out;
   }
 
@@ -155,29 +93,38 @@
 .accordion__content-tab {
   position: absolute;
   right: -30px;
-  top: -60px;
-  color: $color-light;
-  font-weight: 400;
-  font-size: 20rem;
-  writing-mode: vertical-lr;
-  user-select: none;
-  opacity: 0;
+  top: 0px;
+  opacity: 0.2;
+  height: 0;
+  overflow: hidden;
   @extend %transition;
 
-  .accordion__content.active & {
-    opacity: 0.2;
+  .accordion.active & {
+    height: 180px;
+  }
+
+  h4 {
+    color: $color-light;
+    font-weight: 400;
+    font-size: 20rem;
+    writing-mode: vertical-lr;
+    transform: translateY(-65px);
   }
 }
 
 .accordion__content-bg {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -82px;
   width: 100%;
   height: 560px;
-  z-index: -1;
+  z-index: 0;
   transform: rotate(90deg);
   @extend %transition;
+
+  .accordion.active & {
+    top: 0;
+  }
 
   &_1 {
     background: url('../assets/images/img-1.png') no-repeat center center;
@@ -206,22 +153,32 @@
 }
 
 .accordion__content-info {
-  color: $color-light;
-  opacity: 0;
-  @extend %transition;
   position: absolute;
-  top: 70px;
-  left: 20px;
-  transform-origin: center;
+  top: 60px;
+  left: 30px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
   transform: rotate(90deg);
+  transform-origin: top center;
+  color: $color-light;
+  @extend %transition;
 
 
-  .accordion__content.active & {
-    opacity: 1;
+  .accordion.active & {
+    height: 100px;
+    width: 180px;
+    top: 110px;
   }
 
   h5, 
   p {
     margin: 6px 0;
+  }
+}
+
+.button_accordion {
+  .accordion.active & {
+    pointer-events: all;
   }
 }

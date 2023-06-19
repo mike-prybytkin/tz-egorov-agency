@@ -1,10 +1,10 @@
 import { HasDataAttribute } from '../../shared/types';
 
 const sliderAccordion = () => {
-  const titles: NodeListOf<HTMLElement & HasDataAttribute> = document.querySelectorAll('.accordion__title');
+  const accordionSlides: NodeListOf<HTMLElement & HasDataAttribute> = document.querySelectorAll('.accordion');
   const contents: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion__content');
 
-  titles.forEach((item) =>
+  accordionSlides.forEach((item) =>
     item.addEventListener('click', () => {
       const activeContent = document.querySelector(`#${item.dataset.tab}`) as HTMLElement;
 
@@ -19,7 +19,7 @@ const sliderAccordion = () => {
           element.style.height = '0';
         });
 
-        titles.forEach((element) => element.classList.remove('active'));
+        accordionSlides.forEach((element) => element.classList.remove('active'));
 
         item.classList.add('active');
         activeContent.classList.add('active');
