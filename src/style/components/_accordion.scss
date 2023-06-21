@@ -23,6 +23,8 @@
   overflow: hidden;
   transform-origin: center center;
   transform: translate(90%, -24%) rotate(-90deg);
+  box-shadow: $block-shadow;
+  
   @include media-tablet {
     transform: rotate(0deg);
     padding: 100px 0;
@@ -50,7 +52,7 @@
   padding: 10px 20px;
   border: 1px solid $color-border-accordion;
   border-top: none;
-  @extend %transition;
+  @extend %transition_5;
   z-index: 1;
 }
 
@@ -72,11 +74,8 @@
   border: 1px solid $color-border-accordion;
   border-top: none;
   height: 0px;
-  transition: height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s ease-out 0.5s, visibility 0.1s ease-out 0.5s;
+  @extend %transition_5;
 
-  .accordion.active & {
-    transition: height 0.5s ease-out, padding 0.5s ease-out, opacity 0.1s ease-out, visibility 0.1s ease-out;
-  }
 
   .accordion__content-blur {
     position: absolute;
@@ -97,7 +96,7 @@
   opacity: 0.2;
   height: 0;
   overflow: hidden;
-  @extend %transition;
+  @extend %transition_5;
 
   .accordion.active & {
     height: 180px;
@@ -118,9 +117,9 @@
   top: -82px;
   width: 100%;
   height: 560px;
-  z-index: 0;
+  z-index: -1;
   transform: rotate(90deg);
-  @extend %transition;
+  @extend %transition_5;
 
   .accordion.active & {
     top: 0;
@@ -154,21 +153,16 @@
 
 .accordion__content-info {
   position: absolute;
-  top: 60px;
-  left: 30px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
+  top: 70px;
+  left: -130px;
   transform: rotate(90deg);
-  transform-origin: top center;
+  transform-origin: center center;
   color: $color-light;
-  @extend %transition;
+  transition: all .2s ease-in-out .3s;
 
 
   .accordion.active & {
-    height: 100px;
-    width: 180px;
-    top: 110px;
+    left: 0px;
   }
 
   h5, 

@@ -1,37 +1,44 @@
-import { HasDataAttribute } from '../../shared/types';
-
 const sliderAccordion = () => {
-  const accordionSlides: NodeListOf<HTMLElement & HasDataAttribute> = document.querySelectorAll('.accordion');
-  const contents: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion__content');
+  const accordionWrapper = document.querySelector('.wrapper-accordion__rotate') as HTMLElement;
+  const accordionSlides: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion');
+  const accordionContentBlocks: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion__content');
+  const slideHeight = '560px';
 
-  accordionSlides.forEach((item) =>
-    item.addEventListener('click', () => {
-      const activeContent = document.querySelector(`#${item.dataset.tab}`) as HTMLElement;
+  const openFirstSlide = () => {
+    document.querySelector('[data-tab="tab-1"]')?.classList.add('active');
+    const { style } = document.querySelector('#tab-1') as HTMLElement;
+    style.height = slideHeight;
+  };
+  openFirstSlide();
 
-      if (activeContent?.classList.contains('active')) {
-        activeContent.classList.remove('active');
-        item.classList.remove('active');
-        activeContent.style.height = '0';
-      } else {
-        contents.forEach((element) => {
-          element.classList.remove('active');
-          // eslint-disable-next-line no-param-reassign
-          element.style.height = '0';
+  let isAnimateEnd = true;
+  accordionWrapper.addEventListener('transitionend', () => {
+    isAnimateEnd = true;
+  });
+
+  const slideHandler = (event: MouseEvent) => {
+    const accordionTitle = (event.target as HTMLElement).closest('.accordion__title');
+
+    if (accordionTitle) {
+      const activeSlide = accordionTitle?.parentNode as HTMLElement;
+      const activeContent = document.querySelector(`#${activeSlide.dataset.tab}`) as HTMLElement;
+
+      if (isAnimateEnd) {
+        accordionContentBlocks.forEach((block) => {
+          const { style } = block;
+          style.height = '0';
         });
 
-        accordionSlides.forEach((element) => element.classList.remove('active'));
+        accordionSlides.forEach((slide) => slide.classList.remove('active'));
 
-        item.classList.add('active');
-        activeContent.classList.add('active');
-        activeContent.style.height = `560px`;
+        activeSlide.classList.add('active');
+        activeContent.style.height = slideHeight;
+        isAnimateEnd = false;
       }
-    })
-  );
+    }
+  };
 
-  document.querySelector('[data-tab="tab-1"]')?.classList.add('active');
-  const tab1 = document.querySelector('#tab-1') as HTMLElement;
-  tab1.classList.add('active');
-  tab1.style.height = `560px`;
+  accordionWrapper.addEventListener('click', slideHandler);
 };
 
 export default sliderAccordion;
