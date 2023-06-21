@@ -18,10 +18,22 @@ h1 {
   @include font-primary(7.2rem, 700, $color-heading);
   display: inline-block;
   margin: 0;
+  @include media-desktop {
+    font-size: 5.5rem;
+  }
+  @include media-tablet {
+    font-size: 3.6rem;
+  }
 }
 
 h2 {
   @include font-primary(7.2rem, 600, $color-text-primary);
+  @include media-desktop {
+    font-size: 5.5rem;
+  }
+  @include media-tablet {
+    font-size: 3.6rem;
+  }
 }
 
 h3 {
@@ -32,6 +44,17 @@ h3 {
 h4 {
   @include font-primary(3.2rem, 600, $color-light);
   margin: 0;
+  @include media-desktop {
+    font-size: 2.2rem;
+  }
+}
+
+h5 {
+  @include font-primary(1.8rem, 600, $color-light);
+  margin: 0;
+  @include media-desktop {
+    font-size: 1.5rem;
+  }
 }
 
 a {

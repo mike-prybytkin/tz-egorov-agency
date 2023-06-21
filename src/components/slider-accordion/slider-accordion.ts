@@ -1,8 +1,19 @@
+import getWindowWidth from '../service/html-size/getWindowWidth';
+
+const getSlideHeight = () => {
+  const windowWidth = getWindowWidth();
+  let slideHeight = '560px';
+  if (windowWidth < 1200) {
+    slideHeight = '400px';
+  }
+  return slideHeight;
+};
+
 const sliderAccordion = () => {
   const accordionWrapper = document.querySelector('.wrapper-accordion__rotate') as HTMLElement;
   const accordionSlides: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion');
   const accordionContentBlocks: NodeListOf<HTMLElement> = document.querySelectorAll('.accordion__content');
-  const slideHeight = '560px';
+  const slideHeight = getSlideHeight();
 
   const openFirstSlide = () => {
     document.querySelector('[data-tab="tab-1"]')?.classList.add('active');
@@ -17,6 +28,7 @@ const sliderAccordion = () => {
   });
 
   const slideHandler = (event: MouseEvent) => {
+    console.log(getWindowWidth());
     const accordionTitle = (event.target as HTMLElement).closest('.accordion__title');
 
     if (accordionTitle) {

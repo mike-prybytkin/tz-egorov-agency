@@ -20,7 +20,10 @@
       height: 100%;
       background: $color-background-footer;
       mix-blend-mode: multiply;
-      z-index: 2;
+      @include media-desktop {
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
       
       .footer-form {
         @include media-desktop {
