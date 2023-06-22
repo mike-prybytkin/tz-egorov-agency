@@ -28,7 +28,6 @@ const sliderAccordion = () => {
   });
 
   const slideHandler = (event: MouseEvent) => {
-    console.log(getWindowWidth());
     const accordionTitle = (event.target as HTMLElement).closest('.accordion__title');
 
     if (accordionTitle) {

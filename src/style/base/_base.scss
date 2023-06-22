@@ -47,11 +47,18 @@ h4 {
   @include media-desktop {
     font-size: 2.2rem;
   }
+  @include media-tablet {
+    font-weight: 400;
+  }
+  @include media-mobile {
+    font-size: 1.6rem;
+  }
 }
 
 h5 {
   @include font-primary(1.8rem, 600, $color-light);
   margin: 0;
+  line-height: 1.5rem;
   @include media-desktop {
     font-size: 1.5rem;
   }
