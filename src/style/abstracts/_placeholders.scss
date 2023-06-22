@@ -15,3 +15,20 @@
   background: $color-bg-button-event;
   color: $color-light;
 }
+
+%scrollbar {
+  overflow-y: auto;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    @include scrollbar($color: $color-bg-scrollbar, $br-radius: 0px);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include scrollbar($color: $color-main, $br-radius: 0px);
+  }
+}

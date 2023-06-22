@@ -53,3 +53,8 @@
 @mixin fade-in-animation ( $duration: 1s, $delay: 0.5s) {
   animation: fade-in $duration ease-in-out $delay forwards;
 }
+
+@mixin scrollbar ($color, $br-radius) {
+  background-color: $color;
+  border-radius: $br-radius;
+}
